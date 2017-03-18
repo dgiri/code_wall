@@ -4,11 +4,26 @@
     <title>CodeWall</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <%= yield %>
+	<!--   	<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> -->
+
+
+
+
+    <div class="container">
+    	<%= render :partial => "shared/navbar" %>
+    	<%= render :partial => "shared/jumbotron" if @jambotron %>
+    	<%= yield %>
+    	<%= render :partial => "shared/footer" %>
+    </div>
+
+
+    
+    
   </body>
 </html>
